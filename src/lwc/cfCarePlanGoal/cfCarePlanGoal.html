@@ -1,0 +1,157 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <vlocity_ins-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </vlocity_ins-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <vlocity_ins-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></vlocity_ins-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <vlocity_ins-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12"  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-bottom_x-small" style="">
+          <div data-style-id="state0element0" class="slds-col   slds-p-around_x-small slds-size_12-of-12 " data-rindex={rindex} style="" >
+    <vlocity_ins-block data-style-id="state0element0_child"  card={card}  record={record}  label="\{LabelOne}"  collapsible="true"  collapsed-by-default="true"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col   slds-size_1-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_ins-output-field data-style-id="state0element0block_element0_child"   card={card}  record={record}  placeholder="High"  type="text"  label="Priority"  styles='\{"label":{"fontSize":"bold"}}'  theme="slds"  ></vlocity_ins-output-field>
+      </div><div data-style-id="state0element0block_element1" class="slds-col   slds-size_1-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_ins-output-field data-style-id="state0element0block_element1_child"   card={card}  record={record}  placeholder="0%"  type="text"  label="Progress"  styles='\{"label":{"fontSize":"bold"}}'  theme="slds"  ></vlocity_ins-output-field>
+      </div><div data-style-id="state0element0block_element2" class="slds-col   slds-size_1-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_ins-output-field data-style-id="state0element0block_element2_child"   card={card}  record={record}  placeholder="Dec 11, 2022"  type="date"  label="Due Date"  styles='\{"label":{"fontSize":"bold"}}'  format="mmm/D/YYYY"  theme="slds"  ></vlocity_ins-output-field>
+      </div><div data-style-id="state0element0block_element3" class="slds-col   slds-size_1-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_ins-output-field data-style-id="state0element0block_element3_child"   card={card}  record={record}  placeholder="Not Started"  type="text"  label="Status"  styles='\{"label":{"fontSize":"bold"}}'  format="M/D/YYYY"  theme="slds"  ></vlocity_ins-output-field>
+      </div><div data-style-id="state0element0block_element4" class="slds-col  slds-text-align_right  slds-size_8-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_ins-flex-menu data-style-id="state0element0block_element4_child" 
+    onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction}  card={card}  record={record}  type="action"  size=""  variant=""  icon-name="utility:down"  overflow="true"  label=""  position="right"  icon-size="small" 
+    theme="slds" > 
+     <vlocity_ins-flex-menu-item 
+    name="menu-item-1655992900064-0"
+    theme="slds"
+    data-style-id="state0element0block_element4_menuitem_0"
+    
+    class=""
+    >
+    <vlocity_ins-flex-action record={record} card={card}  action-list='\[{"key":"1655992900067-4citwpskl","label":"Action","draggable":false,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1655994700582","type":"OmniScript","displayName":"Action","vlocityIcon":"standard-default","openUrlIn":"Current Window","layoutType":"lightning","omniType":{"Name":"CarePlan/UI/English","Id":"a3q8Z0000000RmZQAU","isLwcOs":true},"isLwcOS":true},"actionIndex":0}]'  label="Create Goal"  icon-name="standard:default"  re-render-flyout="undefined"  preload-flyout="undefined"  flyout-details='\{}'  flyout-channel="undefined"  class="state0element0block_element4_menuitem_0 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element0block_element4_menuitem_0" data-show-spinner="false" 
+    data-element-label="menu6menuitem0" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     </vlocity_ins-flex-action>
+    </vlocity_ins-flex-menu-item><vlocity_ins-flex-menu-item 
+    name="menu-item-1655992926187-0"
+    theme="slds"
+    data-style-id="state0element0block_element4_menuitem_1"
+    
+    class=""
+    >
+    <vlocity_ins-flex-action record={record} card={card}  action-list='\[{"key":"1655992926189-ltr151ttw","label":"Action","draggable":false,"isOpen":true,"card":"{card}","stateAction":{"id":"test-action","type":"Custom","displayName":"Action","vlocityIcon":"standard-default","targetType":"Web Page","openUrlIn":"Current Window","Web Page":{"targetName":"/apex"}}}]'  label="Edit Problem"  icon-name="standard:default"  re-render-flyout="undefined"  preload-flyout="undefined"  flyout-details='\{}'  flyout-channel="undefined"  class="state0element0block_element4_menuitem_1 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element0block_element4_menuitem_1" data-show-spinner="false" 
+    data-element-label="menu6menuitem1" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     </vlocity_ins-flex-action>
+    </vlocity_ins-flex-menu-item>
+    </vlocity_ins-flex-menu>
+    </div><div data-style-id="state0element0block_element5" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><c-cf-care-plan-goal-detail data-style-id="state0element0block_element5_child"  tracking-obj={_childCardTrackingObj}  is-inside-parent={insideParent} parent-uniquekey={uniqueKey}  card-node=""  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  is-child-card-tracking-enabled="false"  object-api-name={objectApiName}  theme="slds"   onupdateparent={updateParentData}></c-cf-care-plan-goal-detail>
+    </div>
+        </div></vlocity_ins-block>
+    </div>
+        </div>
+      </vlocity_ins-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <vlocity_ins-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12"  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-p-around_x-small slds-m-bottom_x-small" style="">
+          <div data-style-id="state0element0" class="slds-col   slds-p-around_x-small slds-size_12-of-12 " data-rindex={rindex} style="" >
+    <vlocity_ins-block data-style-id="state0element0_child"  card={card}  record={record}  label="\{LabelOne}"  collapsible="true"  collapsed-by-default="true"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col   slds-size_1-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_ins-output-field data-style-id="state0element0block_element0_child"   card={card}  record={record}  placeholder="High"  type="text"  label="Priority"  styles='\{"label":{"fontSize":"bold"}}'  theme="slds"  ></vlocity_ins-output-field>
+      </div><div data-style-id="state0element0block_element1" class="slds-col   slds-size_1-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_ins-output-field data-style-id="state0element0block_element1_child"   card={card}  record={record}  placeholder="0%"  type="text"  label="Progress"  styles='\{"label":{"fontSize":"bold"}}'  theme="slds"  ></vlocity_ins-output-field>
+      </div><div data-style-id="state0element0block_element2" class="slds-col   slds-size_1-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_ins-output-field data-style-id="state0element0block_element2_child"   card={card}  record={record}  placeholder="Dec 11, 2022"  type="date"  label="Due Date"  styles='\{"label":{"fontSize":"bold"}}'  format="mmm/D/YYYY"  theme="slds"  ></vlocity_ins-output-field>
+      </div><div data-style-id="state0element0block_element3" class="slds-col   slds-size_1-of-12  " data-rindex={rindex} style="      
+         " ><vlocity_ins-output-field data-style-id="state0element0block_element3_child"   card={card}  record={record}  placeholder="Not Started"  type="text"  label="Status"  styles='\{"label":{"fontSize":"bold"}}'  format="M/D/YYYY"  theme="slds"  ></vlocity_ins-output-field>
+      </div><div data-style-id="state0element0block_element4" class="slds-col  slds-text-align_right  slds-size_8-of-12  " data-rindex={rindex} style="      
+         " >
+    <vlocity_ins-flex-menu data-style-id="state0element0block_element4_child" 
+    onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction}  card={card}  record={record}  type="action"  size=""  variant=""  icon-name="utility:down"  overflow="true"  label=""  position="right"  icon-size="small" 
+    theme="slds" > 
+     <vlocity_ins-flex-menu-item 
+    name="menu-item-1655992900064-0"
+    theme="slds"
+    data-style-id="state0element0block_element4_menuitem_0"
+    
+    class=""
+    >
+    <vlocity_ins-flex-action record={record} card={card}  action-list='\[{"key":"1655992900067-4citwpskl","label":"Action","draggable":false,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1655994700582","type":"OmniScript","displayName":"Action","vlocityIcon":"standard-default","openUrlIn":"Current Window","layoutType":"lightning","omniType":{"Name":"CarePlan/UI/English","Id":"a3q8Z0000000RmZQAU","isLwcOs":true},"isLwcOS":true},"actionIndex":0}]'  label="Create Goal"  icon-name="standard:default"  re-render-flyout="undefined"  preload-flyout="undefined"  flyout-details='\{}'  flyout-channel="undefined"  class="state0element0block_element4_menuitem_0 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element0block_element4_menuitem_0" data-show-spinner="false" 
+    data-element-label="menu6menuitem0" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     </vlocity_ins-flex-action>
+    </vlocity_ins-flex-menu-item><vlocity_ins-flex-menu-item 
+    name="menu-item-1655992926187-0"
+    theme="slds"
+    data-style-id="state0element0block_element4_menuitem_1"
+    
+    class=""
+    >
+    <vlocity_ins-flex-action record={record} card={card}  action-list='\[{"key":"1655992926189-ltr151ttw","label":"Action","draggable":false,"isOpen":true,"card":"{card}","stateAction":{"id":"test-action","type":"Custom","displayName":"Action","vlocityIcon":"standard-default","targetType":"Web Page","openUrlIn":"Current Window","Web Page":{"targetName":"/apex"}}}]'  label="Edit Problem"  icon-name="standard:default"  re-render-flyout="undefined"  preload-flyout="undefined"  flyout-details='\{}'  flyout-channel="undefined"  class="state0element0block_element4_menuitem_1 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element0block_element4_menuitem_1" data-show-spinner="false" 
+    data-element-label="menu6menuitem1" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     </vlocity_ins-flex-action>
+    </vlocity_ins-flex-menu-item>
+    </vlocity_ins-flex-menu>
+    </div><div data-style-id="state0element0block_element5" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><c-cf-care-plan-goal-detail data-style-id="state0element0block_element5_child"  tracking-obj={_childCardTrackingObj}  is-inside-parent={insideParent} parent-uniquekey={uniqueKey}  card-node=""  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  is-child-card-tracking-enabled="false"  object-api-name={objectApiName}  theme="slds"   onupdateparent={updateParentData}></c-cf-care-plan-goal-detail>
+    </div>
+        </div></vlocity_ins-block>
+    </div>
+        </div>
+      </vlocity_ins-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <vlocity_ins-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </vlocity_ins-action>
+  
+            <vlocity_ins-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </vlocity_ins-action>
+            </div>
+          </template>
