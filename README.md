@@ -6,7 +6,7 @@ Embed complex charts into an OmniScript using the Chart.js (https://www.chartjs.
 
 This custom LWC provides a generic container for displaying charts. The following illustrates a few examples of the types of charts that can be supported.
 
-[Image: image.png]
+![](/images/overview.png)
 <h2>Business Objective</h2>
 
 * Add charting functions to Omnistudio 
@@ -128,7 +128,7 @@ Download the appropriate LWC asset that aligns with your managed package. Import
 
 The above JSON would show the following chart:
 
-[Image: image.png]
+![](/images/bar.png)
 1. After configuring the JSON, Activate the OmniScript.
 
 
