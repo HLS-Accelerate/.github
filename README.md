@@ -1,3 +1,4 @@
+![](images/ahlsbanner.png)
 <h1>A-HLS LWC - Chart.js Documentation</h1>
 
 Embed complex charts into an OmniScript using the Chart.js (https://www.chartjs.org/) library. For simple charts (i.e. single dataset), you should consider leveraging a FlexCard which also supports a chart component. If you need a bit more flexibility beyond what FlexCards provide, the approach used here should be helpful.
